@@ -8,7 +8,20 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (datesArray, indexParam) => {
+  let epochs = [];
+  for (let index = 0; index < datesArray.length; index++) {
+    const date = datesArray[index];
+    const epoch = Date.parse(date).toString().substring(0,10);
+    epochs.push(epoch);
+  }
+
+  if (isNaN(indexParam)) {
+    return epochs.sort().join("-");
+  } else {
+    return epochs[indexParam];
+  }
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
